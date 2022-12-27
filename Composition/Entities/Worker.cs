@@ -20,17 +20,17 @@ namespace Composition.Entities
             Department = department;
         }
 
-        void AddContract(HourContract contract)
+        public void AddContract(HourContract contract)
         {
             Contracts.Add(contract);
         }
 
-        void RemoveContract(HourContract contract)
+        public void RemoveContract(HourContract contract)
         {
             Contracts.Remove(contract);
         }
 
-        double Income(int year, int month)
+        public double Income(int year, int month)
         {
             double total = BaseSalary;
             foreach (HourContract contract in Contracts)
