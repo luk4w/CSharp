@@ -52,7 +52,7 @@ namespace Composition
 
             Console.WriteLine($"Name: {worker.Name}");
             Console.WriteLine($"Department: {worker.Department.Name}");
-            Console.WriteLine($"Income for {monthAndYear}: {worker.Income(month, year)}");
+            Console.WriteLine($"Income for {monthAndYear}: {worker.Income(year, month)}");
             
             Console.ReadKey();
         }
