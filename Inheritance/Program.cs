@@ -6,34 +6,17 @@ namespace Inheritance
     {
         private static void Main(string[] args)
         {
-            Account account = new Account(number: 01, holder: "Renata", balance: 100);
-            BusinessAccount bAcc = new BusinessAccount(number: 02, holder: "Fahrenheit", balance: 0, loanLimit: 500);
+            Account acc1 = new Account(01, "Gauss", 500.0);
 
             // Upcasting
-            Account acc1 = bAcc;
-            Account acc2 = new BusinessAccount(03, "Gauss", 0, 200);
-            Account acc3 = new SavingsAccount(04, "Joana", 0, 0.01);
+            Account acc2 = new SavingsAccount(02, "Leon", 500.0, 0.01);
 
-            // Downcasting
-            BusinessAccount acc4 = (BusinessAccount)acc2;
-            acc4.Loan(100);
-            //((BusinessAccount)acc2).Loan(100);
+            acc1.Withdraw(10);
+            acc2.Withdraw(10);
 
-            if(acc3 is BusinessAccount) // Example: always false, because acc3 is SavingsAccount
-            {
-                // BusinessAccount acc5 = acc3 as BusinessAccount;
-                BusinessAccount acc5 = (BusinessAccount)acc3;
-                acc5.Loan(100);
-                Console.WriteLine("Loan!");
-            }
-            else if (acc3 is SavingsAccount)
-            {
-                // SavingsAccount acc5 = acc3 as SavingsAccount;
-                SavingsAccount acc5 = (SavingsAccount)acc3;
-                acc5.UpdateBalance();
-                Console.WriteLine("Update Balance!");
-            }
-            
+            Console.WriteLine($"Account 1: {acc1.Balance}");
+            Console.WriteLine($"Account 2: {acc2.Balance}");
+   
             Console.ReadKey();
         }
     }
