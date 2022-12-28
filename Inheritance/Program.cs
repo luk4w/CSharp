@@ -13,7 +13,12 @@ namespace Inheritance
             Account acc1 = bAcc;
             Account acc2 = new BusinessAccount(03, "Gauss", 0, 200);
             Account acc3 = new SavingsAccount(04, "Joana", 0, 0.01);
-            
+
+            // Downcasting
+            BusinessAccount acc4 = (BusinessAccount)acc2;
+            acc4.Loan(100);
+            //((BusinessAccount)acc2).Loan(100);
+
             Console.ReadKey();
         }
     }
