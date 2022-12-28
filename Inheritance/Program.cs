@@ -19,6 +19,19 @@ namespace Inheritance
             acc4.Loan(100);
             //((BusinessAccount)acc2).Loan(100);
 
+            if(acc3 is BusinessAccount) // Example: always false, because acc3 is SavingsAccount
+            {
+                BusinessAccount acc5 = (BusinessAccount)acc3;
+                acc5.Loan(100);
+                Console.WriteLine("Loan!");
+            }
+            else if (acc3 is SavingsAccount)
+            {
+                SavingsAccount acc5 = (SavingsAccount)acc3;
+                acc5.UpdateBalance();
+                Console.WriteLine("Update Balance!");
+            }
+            
             Console.ReadKey();
         }
     }
