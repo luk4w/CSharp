@@ -10,7 +10,7 @@ namespace Inheritance.Entities
             InterestRate = interestRate;
         }
 
-        public override void Withdraw(double amount)
+        public sealed override void Withdraw(double amount)
         {
             Balance -= amount;
         }
