@@ -2,9 +2,9 @@ namespace Inheritance.Entities
 {
     public class Account
     {
-        public int Number { get; set; }
-        public string? Holder { get; set; }
-        public double Balance { get; set; }
+        public int Number { get; protected set; }
+        public string? Holder { get; protected set; }
+        public double Balance { get; protected set; }
 
         public Account(){}
 
