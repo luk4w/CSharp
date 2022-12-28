@@ -1,6 +1,6 @@
 namespace Inheritance.Entities
 {
-    sealed public class SavingsAccount : Account
+    public class SavingsAccount : Account
     {
         public double InterestRate { get; set; }
         public SavingsAccount(){}
