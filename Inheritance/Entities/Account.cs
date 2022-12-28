@@ -15,12 +15,12 @@ namespace Inheritance.Entities
             Balance = balance;
         }
 
-        void Withdraw(double amount)
+        public virtual void Withdraw(double amount)
         {
-            Balance -= amount;
+            Balance -= amount + 5.0;
         }
 
-        void Deposit(double amount)
+        public void Deposit(double amount)
         {
             Balance += amount;
         }
