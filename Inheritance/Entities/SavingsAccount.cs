@@ -1,8 +1,8 @@
 namespace Inheritance.Entities
 {
-    public class SavingsAccount : Account
+    sealed public class SavingsAccount : Account
     {
-        public double InterestRate { get; protected set; }
+        public double InterestRate { get; set; }
         public SavingsAccount(){}
 
         public SavingsAccount(int number, string holder, double balance, double interestRate) : base(number, holder, balance)
