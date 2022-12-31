@@ -5,6 +5,18 @@ namespace AbstractMethod
 {
     internal class Program
     {
+        public static string RequestName()
+        {
+            Console.Write("Name: ");
+            return Console.ReadLine();
+        }
+
+        public static double RequestAnnualIncome()
+        {
+            Console.Write("Annual income: ");
+            return double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+        }
+
         private static void Main(string[] args)
         {
             List<Payer> payers = new List<Payer>();
@@ -16,18 +28,20 @@ namespace AbstractMethod
                 Console.WriteLine($"Tax payer #{i} data:");
                 Console.Write("Individual or company (i/c)? ");
                 char choice = char.Parse(Console.ReadLine());
-                Console.Write("Name: ");
-                String name = Console.ReadLine();
-                Console.Write("Annual income: ");
-                double income = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                string name;
+                double income;
                 switch(choice)
                 {
                     case 'i':
+                        name = RequestName();
+                        income = RequestAnnualIncome();
                         Console.Write("Health expenditures: ");
                         double healthExpenditures = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
                         payers.Add(new Individual(name, income, healthExpenditures));
                         break;
                     case 'c':
+                        name = RequestName();
+                        income = RequestAnnualIncome();
                         Console.Write("Number of employees: ");
                         int numberOfEmployees = int.Parse(Console.ReadLine());
                         payers.Add(new Company(name, income, numberOfEmployees));
