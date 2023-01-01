@@ -1,4 +1,6 @@
-﻿namespace Exceptions
+﻿using System.Globalization;
+
+namespace Exceptions
 {
     internal class Program
     {
@@ -8,7 +10,8 @@
             {
                 int n1 = int.Parse(Console.ReadLine());
                 int n2 = int.Parse(Console.ReadLine());
-                Console.WriteLine(n1/n2);
+                double result = (double)n1 / n2;
+                Console.WriteLine(result.ToString("F2", CultureInfo.InvariantCulture));
             }
             catch(DivideByZeroException e)
             {
@@ -16,7 +19,7 @@
             }
             catch(FormatException e)
             {
-                Console.WriteLine($"Enter a number! {e.Message}");
+                Console.WriteLine($"Enter an integer! {e.Message}");
             }
 
             Console.ReadKey();
