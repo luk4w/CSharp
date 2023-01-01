@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using Exceptions.Entities;
+using Exceptions.Entities.Exceptions;
 
 namespace Exceptions
 {
@@ -8,21 +9,38 @@ namespace Exceptions
         {
             try
             {
-                int n1 = int.Parse(Console.ReadLine());
-                int n2 = int.Parse(Console.ReadLine());
-                double result = (double)n1 / n2;
-                Console.WriteLine(result.ToString("F2", CultureInfo.InvariantCulture));
-            }
-            catch(DivideByZeroException e)
-            {
-                Console.WriteLine($"Division by zero is not allowed!");
-            }
-            catch(FormatException e)
-            {
-                Console.WriteLine($"Enter an integer! {e.Message}");
-            }
+                Console.Write("Room number: ");
+                int number = int.Parse(Console.ReadLine());
+                Console.Write("Check-in date (dd/MM/yyyy): ");
+                DateTime checkIn = DateTime.Parse(Console.ReadLine());
+                Console.Write("Check-out date (dd/MM/yyyy): ");
+                DateTime checkOut = DateTime.Parse(Console.ReadLine());
 
-            Console.ReadKey();
+                Reservation reservation = new Reservation(number, checkIn, checkOut);
+                Console.WriteLine($"Reservation: {reservation}");
+
+                Console.WriteLine("\nEnter data to update the reservation:");
+                Console.Write("Check-in date (dd/MM/yyyy): ");
+                checkIn = DateTime.Parse(Console.ReadLine());
+                Console.Write("Check-out date (dd/MM/yyyy): ");
+                checkOut = DateTime.Parse(Console.ReadLine());
+
+                reservation.UpdateDates(checkIn, checkOut);
+                Console.WriteLine($"Reservation: {reservation}");
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine($"Error in format: {e.Message}");
+            }
+            catch (DomainException e)
+            {
+                Console.WriteLine($"Error in reservation: {e.Message}");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Unexpected error: {e.Message}");
+            }
         }
+
     }
 }
