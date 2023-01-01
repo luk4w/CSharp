@@ -40,6 +40,8 @@ namespace Exceptions
             {
                 Console.WriteLine($"Unexpected error: {e.Message}");
             }
+
+            Console.ReadKey();
         }
 
     }
