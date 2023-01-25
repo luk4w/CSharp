@@ -4,7 +4,7 @@
     {
         private static void Main(string[] args)
         {
-            UsingSample sample = new UsingSample();
+            StreamWriterSample sample = new StreamWriterSample();
             Console.ReadKey();
         }
     }
