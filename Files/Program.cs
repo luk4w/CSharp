@@ -4,7 +4,7 @@
     {
         private static void Main(string[] args)
         {
-            FileStreamSample sample = new FileStreamSample();
+            UsingSample sample = new UsingSample();
             Console.ReadKey();
         }
     }
