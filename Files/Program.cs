@@ -4,7 +4,7 @@
     {
         private static void Main(string[] args)
         {
-            DirectorySample sample = new DirectorySample();
+            PathSample sample = new PathSample();
             Console.ReadKey();
         }
     }
