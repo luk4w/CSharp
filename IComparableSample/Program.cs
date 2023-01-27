@@ -1,23 +1,25 @@
-﻿namespace IComparableSample
+﻿using Entities;
+
+namespace IComparableSample
 {
     internal class Program
     {
         private static void Main(string[] args)
         {
-            string path = "data1.txt";
+            string path = "data2.txt";
 
             try
             {
                 using (StreamReader sr = File.OpenText(path))
                 {
-                    List<string>? list = new List<string>();
+                    List<Employee> list = new List<Employee>();
                     while (!sr.EndOfStream)
                     {
                         string? line = sr.ReadLine();
-                        if (line != null) list.Add(line);
+                        if (line != null) list.Add(new Employee(line));
                     }
                     list.Sort();
-                    foreach (string item in list)
+                    foreach (Employee item in list)
                     {
                         Console.WriteLine(item);
                     }
