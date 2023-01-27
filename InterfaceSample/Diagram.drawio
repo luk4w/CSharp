@@ -1,10 +1,10 @@
 <mxfile host="65bd71144e">
     <diagram name="Página-1" id="6c6V2wtK6JVMgeISPaie">
-        <mxGraphModel dx="514" dy="546" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1314" dy="792" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="0jlmAeDJw31DhyYfTQGp-1" value="&lt;&lt;interface&gt;&gt;&#10;Shape" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
+                <mxCell id="0jlmAeDJw31DhyYfTQGp-1" value="&lt;&lt;interface&gt;&gt;&#10;IShape" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
                     <mxGeometry x="330" y="170" width="160" height="74" as="geometry"/>
                 </mxCell>
                 <mxCell id="0jlmAeDJw31DhyYfTQGp-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="0jlmAeDJw31DhyYfTQGp-1" vertex="1">
