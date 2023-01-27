@@ -1,4 +1,4 @@
-namespace Interface
+namespace Source
 {
     public interface IShape
     {
