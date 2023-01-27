@@ -1,4 +1,4 @@
-namespace Source
+namespace Models
 {
     public interface IShape
     {

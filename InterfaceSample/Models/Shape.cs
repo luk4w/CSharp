@@ -1,6 +1,6 @@
 using Enums;
 
-namespace Source
+namespace Models
 {
     public abstract class Shape : IShape
     {
