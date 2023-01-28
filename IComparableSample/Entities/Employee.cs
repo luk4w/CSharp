@@ -25,7 +25,7 @@ namespace Entities
             {
                 Employee? other = obj as Employee;
                 if(other != null)
-                    return Name.CompareTo(other.Name);
+                    return Salary.CompareTo(other.Salary);
                 else
                     throw new ArgumentException("Null object");
             }
