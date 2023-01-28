@@ -8,30 +8,30 @@
             SortedSet<int> b = new SortedSet<int>() { 5, 6, 7, 8, 9, 10};
             
             Console.Write("A: ");
-            PrintCollection(a);
+            PrintCollection(a); // 0 2 4 5 6 8 10
 
             Console.Write("B: ");
-            PrintCollection(b);
+            PrintCollection(b); // 5 6 7 8 9 10
 
             Console.Write("A or B: ");
             SortedSet<int> u = new SortedSet<int>(a);
             u.UnionWith(b);
-            PrintCollection(u);
+            PrintCollection(u); // 0 2 4 5 6 7 8 9 10
 
             Console.Write("A and B: ");
             SortedSet<int> i = new SortedSet<int>(a);
             i.IntersectWith(b);
-            PrintCollection(i);
+            PrintCollection(i); // 5 6 8 10
 
             Console.Write("A xor B: ");
             SortedSet<int> x = new SortedSet<int>(a);
             x.ExceptWith(b);
-            PrintCollection(x);
+            PrintCollection(x); // 0 2 4
 
             Console.Write("B xor A: ");
             SortedSet<int> x2 = new SortedSet<int>(b);
             x2.ExceptWith(a);
-            PrintCollection(x2);
+            PrintCollection(x2); // 7 9
             
             Console.ReadKey();
         }
