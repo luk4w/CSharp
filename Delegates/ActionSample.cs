@@ -1,11 +1,10 @@
-﻿using Entities;
+using Entities;
 
-namespace ListForEachSample
+namespace Delegates
 {
-    internal class Program
+    public class ActionSample
     {
-        static void UpdatePrice(Product p) => p.Price += p.Price * 0.1;
-        private static void Main(string[] args)
+        public ActionSample()
         {
             List<Product> list = new List<Product>();
 
@@ -25,8 +24,6 @@ namespace ListForEachSample
             {
                 Console.WriteLine(p);
             }
-
-            Console.ReadKey();
         }
     }
 }
