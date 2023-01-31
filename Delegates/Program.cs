@@ -7,9 +7,9 @@ namespace Delegates
         static void UpdatePrice(Product p) => p.Price += p.Price * 0.1;
         private static void Main(string[] args)
         {
-            PredicateSample predSample = new PredicateSample();
-            //ActionSample actSample = new ActionSample();
-
+            // PredicateSample predSample = new PredicateSample();
+            // ActionSample actSample = new ActionSample();
+            FuncSample funcSample = new FuncSample();
 
             Console.ReadKey();
         }
