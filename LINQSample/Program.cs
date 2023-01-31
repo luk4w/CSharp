@@ -42,7 +42,7 @@ namespace LINQSample
             // Anonymous object
             var r3 = products.Where(p => p.Name.ToUpper()[0] == 'C').Select(p => new { p.Name, Price = p.Price, CategoryName = p.Category.Name });
             Print("NAMES STARTED WITH 'C' AND ANONYMOUS OBJECT:", r3);
-            
+
             // Ordination
             IEnumerable<Product> r4 = products.Where(p => p.Category.Tier == 1).OrderBy(p => p.Price).ThenBy(p => p.Name);
             Print("TIER 1 AND ORDER BY PRICE THEN BY NAME", r4);
@@ -61,6 +61,35 @@ namespace LINQSample
 
             Product? r9 = products.Where(p => p.Id == 30).SingleOrDefault();
             Console.WriteLine($"ID == 30 SINGLE OR DEFAULT: {r9}");
+
+            double r10 = products.Max(p => p.Price);
+            Console.WriteLine($"MAX PRICE: {r10}");
+
+            double r11 = products.Min(p => p.Price);
+            Console.WriteLine($"MIN PRICE: {r11}");
+
+            double r12 = products.Where(p => p.Category.Id == 1).Sum(p => p.Price);
+            Console.WriteLine($"CATEGORY 1 SUM PRICES: {r12}");
+
+            double r13 = products.Where(p => p.Category.Id == 1).Average(p => p.Price);
+            Console.WriteLine($"CATEGORY 1 AVERAGE PRICES: {r13}");
+
+            double r14 = products.Where(p => p.Category.Id == 5).Select(p => p.Price).DefaultIfEmpty(0.0).Average();
+            Console.WriteLine($"CATEGORY 5 (NOT EXIST) AVERAGE PRICES: {r14}");
+
+            double r15 = products.Where(p => p.Category.Id == 1).Select(p => p.Price).Aggregate(0.0, (x, y) => x + y);
+            Console.WriteLine($"CATEGORY 1 AGGREGATE SUM: {r15}\n");
+            
+            IEnumerable<IGrouping<Category, Product>>? r16 = products.GroupBy(p => p.Category);
+            foreach (IGrouping<Category, Product> group in r16)
+            {
+                Console.WriteLine($"Category {group.Key.Name}:");
+                foreach (Product p in group)
+                {
+                    Console.WriteLine(p);
+                }
+                Console.WriteLine();
+            }
 
             Console.ReadKey();
         }
